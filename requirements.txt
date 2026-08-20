@@ -1,0 +1,26 @@
+# Inti pemrosesan gambar & data
+opencv-python>=4.8.0
+numpy>=1.24.0
+pandas>=2.0.0
+openpyxl>=3.1.0
+
+# OCR (pilih salah satu, default: easyocr)
+easyocr>=1.7.1
+# paddleocr>=2.7.0
+# paddlepaddle>=2.5.0        # wajib diinstall juga kalau pakai paddleocr
+
+# Super Resolution (Real-ESRGAN)
+torch>=2.0.0
+torchvision>=0.15.0
+basicsr>=1.4.2
+realesrgan>=0.3.0
+
+# Catatan instalasi:
+# 1. torch bisa sangat besar (~1-2GB) -- kalau tidak punya GPU/CUDA, install
+#    versi CPU-only agar lebih ringan:
+#      pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+# 2. Kalau hanya butuh OCR + preprocessing TANPA super-resolution (lebih ringan
+#    & cepat), jalankan skrip dengan flag --no-sr dan skip install torch/
+#    basicsr/realesrgan sama sekali -- pipeline tetap jalan (fallback bicubic).
+# 3. basicsr kadang butuh versi numpy/torchvision yang presisi cocok --
+#    kalau ada conflict, coba: pip install basicsr --no-deps
